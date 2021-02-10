@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Child from "./Child";
 import Keys from "./Keys";
+import Search from "./Search";
 import Sibling from "./Sibling";
 import UnControlled from "./UnControlled";
 
@@ -18,6 +19,7 @@ export default function Practice() {
       <Sibling value={text} />
       <UnControlled />
       <Keys />
+      <Search />
     </div>
   );
 }
