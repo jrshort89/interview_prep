@@ -6,10 +6,12 @@ const initialState = {
 };
 
 const searchReducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case actionTypes.ADD_SEARCH:
       return {
         searchHistory: [...state.searchHistory, action.searchText],
+        currentSearch: action.searchResults,
       };
     default:
       return state;

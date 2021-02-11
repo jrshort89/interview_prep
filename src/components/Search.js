@@ -6,6 +6,7 @@ export default function Search() {
   const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
   const searchHistory = useSelector((state) => state.searchHistory);
+  const searchResults = useSelector((state) => state.currentSearch);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -25,6 +26,13 @@ export default function Search() {
       </form>
       {searchHistory?.map((search, index) => (
         <div key={index + 1}>{search}</div>
+      ))}
+      {searchResults?.map((result) => (
+        <div>
+          <a href={result.url} target="_blank" rel="noreferrer">
+            {result.title}
+          </a>
+        </div>
       ))}
     </div>
   );
